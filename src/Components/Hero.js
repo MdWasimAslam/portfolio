@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import coverVideo from '../Assets/cover-2.mp4';
 import { VolumeUp, VolumeOff } from '@mui/icons-material';
 import './Hero.css';
 
@@ -52,7 +51,7 @@ const Hero = () => {
           playsInline
         >
           <source 
-            src={coverVideo} 
+            src="https://cloud.appwrite.io/v1/storage/buckets/6742027c0006ed609c42/files/674203eb001654d937ab/view?project=673b8f07002dfa118b38&project=673b8f07002dfa118b38&mode=admin"
             type="video/mp4" 
           />
           {/* Fallback content */}
@@ -63,6 +62,7 @@ const Hero = () => {
         {isVideoLoaded && (
           <div className="sound-icon" onClick={toggleMute}>
             {isMuted ? <VolumeOff /> : <VolumeUp />}
+            deploy
           </div>
         )}
       </div>
