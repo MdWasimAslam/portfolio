@@ -32,7 +32,7 @@ jobs:
         # Deploy using hardcoded FTP credentials
         lftp -e "
           set ssl:verify-certificate no;
-          open -u 'u189428307.wasimaslam.site','Accesskey@2897' ftp://45.130.228.211;
+          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_HOST }};
           mirror -R ./build /public_html;
           bye
         "
