@@ -24,16 +24,15 @@ jobs:
     - name: Build React App
       run: npm run build
 
-    - name: Debug FTP Connection
-      run: |
-        sudo apt-get update && sudo apt-get install -y lftp
-        lftp -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }} -e "ls; bye"
-
     - name: Deploy to Hostinger via FTP
       run: |
+        # Install lftp
         sudo apt-get update && sudo apt-get install -y lftp
+        
+        # Deploy build folder to Hostinger, bypassing SSL certificate verification
         lftp -e "
           set ssl:verify-certificate no;
+          open -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }};
           mirror -R ./build ${{ secrets.HOSTINGER_FTP_REMOTE_PATH }};
           bye
-        " -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }}
+        "
