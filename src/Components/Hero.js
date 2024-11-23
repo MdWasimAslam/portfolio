@@ -62,7 +62,6 @@ const Hero = () => {
         {isVideoLoaded && (
           <div className="sound-icon" onClick={toggleMute}>
             {isMuted ? <VolumeOff /> : <VolumeUp />}
-            deploy
           </div>
         )}
       </div>
