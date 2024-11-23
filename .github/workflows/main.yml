@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '22'
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
@@ -29,10 +29,10 @@ jobs:
         # Install lftp
         sudo apt-get update && sudo apt-get install -y lftp
         
-        # Deploy build folder to Hostinger, bypassing SSL certificate verification
+        # Deploy using hardcoded FTP credentials
         lftp -e "
           set ssl:verify-certificate no;
-          open -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }};
-          mirror -R ./build ${{ secrets.HOSTINGER_FTP_REMOTE_PATH }};
+          open -u 'u189428307.wasimaslam.site','Wasim@slam1998' ftp://45.130.228.211;
+          mirror -R ./build /public_html;
           bye
         "
