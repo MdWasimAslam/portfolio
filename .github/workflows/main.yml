@@ -33,6 +33,6 @@ jobs:
         lftp -e "
           set ssl:verify-certificate no;
           open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ftp://${{ secrets.FTP_HOST }};
-          mirror -R ./build ${ { secrets.FTP_REMOTE_PATH }};
+          mirror -R ./build ${{ secrets.FTP_REMOTE_PATH }};
           bye
         "
