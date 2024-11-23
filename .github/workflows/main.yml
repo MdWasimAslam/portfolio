@@ -29,10 +29,10 @@ jobs:
         # Install lftp
         sudo apt-get update && sudo apt-get install -y lftp
         
-        # Deploy using hardcoded FTP credentials
+        # Deploy using FTP credentials from GitHub Secrets
         lftp -e "
           set ssl:verify-certificate no;
-          open -u 'u189428307.wasimaslam.site','Accesskey@2897' ftp://45.130.228.211;
-          mirror -R ./build /public_html;
+          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ftp://${{ secrets.FTP_HOST }};
+          mirror -R ./build ${ { secrets.FTP_REMOTE_PATH }};
           bye
         "
