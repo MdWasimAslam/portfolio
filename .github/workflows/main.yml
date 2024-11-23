@@ -3,7 +3,7 @@ name: Deploy React App to Hostinger
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to deploy from
+      - main  # Replace with your branch if it's not 'main'
 
 jobs:
   build:
@@ -16,22 +16,22 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '22'  # Specify your Node.js version here
+        node-version: '22'  # Use your desired Node.js version
 
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
     - name: Build React App
-      run: |
-        npm run build
+      run: npm run build
 
     - name: Deploy to Hostinger via FTP
       run: |
-        curl -LO https://github.com/oleksandr/ftp-deploy/releases/download/v1.0.0/ftp-deploy-linux-x64.tar.gz
-        tar -xvf ftp-deploy-linux-x64.tar.gz
-        ./ftp-deploy -h ${{ secrets.HOSTINGER_FTP_HOST }} \
-                     -u ${{ secrets.HOSTINGER_FTP_USER }} \
-                     -p ${{ secrets.HOSTINGER_FTP_PASSWORD }} \
-                     -r ${{ secrets.HOSTINGER_FTP_REMOTE_PATH }} \
-                     -l ./build
+        # Install lftp for FTP deployment
+        sudo apt-get update && sudo apt-get install -y lftp
+        
+        # Deploy build folder to Hostinger
+        lftp -e "
+          set ssl:verify-certificate no;  # Disable certificate verification for FTP
+          mirror -R ./build ${{ secrets.HOSTINGER_FTP_REMOTE_PATH }};
+          bye
+        " -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }}
