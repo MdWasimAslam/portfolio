@@ -1,2 +1,39 @@
-ftp HOSTINGER_FTP_HOST
-# Enter the username and password when prompted
+name: Deploy React App to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React App
+      run: npm run build
+
+    - name: Debug FTP Connection
+      run: |
+        sudo apt-get update && sudo apt-get install -y lftp
+        lftp -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }} -e "ls; bye"
+
+    - name: Deploy to Hostinger via FTP
+      run: |
+        sudo apt-get update && sudo apt-get install -y lftp
+        lftp -e "
+          set ssl:verify-certificate no;
+          mirror -R ./build ${{ secrets.HOSTINGER_FTP_REMOTE_PATH }};
+          bye
+        " -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} ${{ secrets.HOSTINGER_FTP_HOST }}
