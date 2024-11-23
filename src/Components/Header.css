@@ -1,0 +1,13 @@
+
+.header {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    min-width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.5% 0.7%
+
+}
