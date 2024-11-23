@@ -40,8 +40,16 @@ const Hero = () => {
 
   return (
     <div>
-      <div>
-        {/* Video */}
+      <div className="video-container">
+        {/* Show image until the video is loaded */}
+        {!isVideoLoaded && (
+          <img
+            src="https://cloud.appwrite.io/v1/storage/buckets/6742027c0006ed609c42/files/67423ee700032e43b5ad/view?project=673b8f07002dfa118b38&project=673b8f07002dfa118b38&mode=admin" // Replace with your loading image URL
+            alt="Loading"
+            className="cover-hero"
+          />
+        )}
+
         <video 
           ref={videoRef}
           autoPlay
