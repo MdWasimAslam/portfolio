@@ -106,7 +106,7 @@ const Hero = () => {
           <VerifiedIcon sx={{color:'#F05454'}}/>
         </div>
         <div className="intro-line">Builder, Creator, Artist! ✨</div>
-        <div className="intro-line">I turn coffee into scalable systems and seamless experiences.</div>
+        <div className="intro-line">I turn coffee into scalable apps and seamless experiences.</div>
       </div>
     </div>
   );
