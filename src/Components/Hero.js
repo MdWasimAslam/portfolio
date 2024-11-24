@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VolumeUp, VolumeOff, Email } from "@mui/icons-material";
 import "./Hero.css";
-import { Avatar, Button } from "@mui/material";
 import VerifiedIcon from '@mui/icons-material/Verified';
 
 
@@ -78,20 +77,25 @@ const Hero = () => {
       </div>
       <div className="user-info">
         <div>
-          <Avatar
-            alt="Md Wasim Aslam"
-            className="user-avatar"
-            src="https://cloud.appwrite.io/v1/storage/buckets/6742027c0006ed609c42/files/67423fe60026f45ea47f/view?project=673b8f07002dfa118b38&project=673b8f07002dfa118b38&mode=admin"
+         <img
+          src="https://cloud.appwrite.io/v1/storage/buckets/6742027c0006ed609c42/files/67423fe60026f45ea47f/view?project=673b8f07002dfa118b38&project=673b8f07002dfa118b38&mode=admin"
+          alt="Md Wasim Aslam"
+          className="user-avatar"
           />
         </div>
         <div>
-          <Button
+          {/* <Button
             variant="contained"
             className="sayHiBtn"
             startIcon={<Email />}
           >
             Say Hi!
-          </Button>
+          </Button> */}
+
+          <button className="sayHiBtn">
+            <Email />
+            Say Hi!
+          </button>
         </div>
       </div>
 

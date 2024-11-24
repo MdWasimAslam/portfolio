@@ -37,18 +37,25 @@
     position: relative;
     top:-70px;
 }
-.user-info .css-fmeqll-MuiAvatar-root{
+.user-info .user-avatar{
     width: 120px;
     height: 120px;
     border: 4px solid var(--secondary-color);
+    border-radius: 50%;
 
 }
 
 
-.user-info .css-1abvrni-MuiButtonBase-root-MuiButton-root{
+.user-info .sayHiBtn{
     border-radius: 200px;
     padding: 0.6rem 1.2rem;
     background: #F05454;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .user-details{
@@ -90,19 +97,21 @@
         font-size: 3rem;
     }
 
-    .user-info .css-fmeqll-MuiAvatar-root{
-        width: 95px;
-        height: 95px;
-        border: 2px solid var(--secondary-color);
-    }
-
-    .user-info .css-1abvrni-MuiButtonBase-root-MuiButton-root{
-        padding: 0.4rem 0.8rem;
-    }
+    
 
     .user-info{
         width: 90%;
         top: -45px;
+    }
+
+    .user-info .user-avatar{
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-info .sayHiBtn{
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
     }
 
     .user-details{
