@@ -1,0 +1,57 @@
+.Tabs-main-container{
+    width: 90%;
+    margin-top: 15px;
+}
+
+.tabs-label{
+    margin-right: 7%;
+}
+
+
+.tabs-content{
+    margin-top: 20px;
+    padding: auto;
+}
+
+.Tabs-main-container .css-1wxkzlj-MuiTabs-flexContainer{
+    gap:13%;
+}
+
+.Tabs-main-container .css-jhczcq-MuiTabs-root{
+    color:lightgrey;
+}
+
+.tabs-label {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .tabs-label.selected {
+    font-weight: bold; /* Bold font for selected tab */
+    font-size: 16px;   /* Larger font for selected tab */
+    color: white;
+  }
+
+
+/* mobile Responsive */
+
+@media screen and (max-width: 768px){
+    .Tabs-main-container{
+        width: 100%;
+    }
+    .tabs-label{
+        margin-right: 0;
+    }
+
+    .Tabs-main-container .css-t70we8-MuiTabs-indicator{
+        width: 60px !important;
+        margin-left: 4%;
+    }
+    .tabs-content{
+        padding: 0px 20px;
+    }
+
+    .Tabs-main-container .css-1wxkzlj-MuiTabs-flexContainer{
+        gap:0;
+    }
+}

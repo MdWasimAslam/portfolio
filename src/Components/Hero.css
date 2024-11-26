@@ -81,10 +81,57 @@
     padding: 3px 0px;
 }
 
+ .intro-1{
+    font-size: 20px;
+    font-weight: 400;
+}
 
+.subIntro-section{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    color: grey;
+    position: relative;
+    top: -20px;
+}
 
+.subIntro-items{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
 
+.subIntro-items :hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
 
+.github-follow-section{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin: 10% 0% 5% 0%;
+}
+
+.github-followBtn{
+
+    padding: 0.5rem 1rem;
+    background: grey;
+    color: white;
+    border: none;
+    border-radius: 200px;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap : 15px;
+    font-weight: 600;
+
+}
 /* Mobile Responsive Design */
 
 @media screen and (max-width: 768px){
@@ -130,6 +177,25 @@
 
     .user-details .intro-line{
         padding: 2px 0px;
+    }
+
+    .intro-1{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .subIntro-section{
+        gap: 10px;
+        top: -10px;
+    }
+
+    .subIntro-items .css-1umw9bq-MuiSvgIcon-root{
+        height: 20px;
+        width: 20px;
+    }
+    .subIntro-items{
+        font-size: 11px;
+        gap:3px;
     }
 
 
