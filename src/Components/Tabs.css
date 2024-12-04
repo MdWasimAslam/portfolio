@@ -17,6 +17,10 @@
     gap:13%;
 }
 
+.Tabs-main-container .css-162tvoi{
+    gap:13%;
+}
+
 .Tabs-main-container .css-jhczcq-MuiTabs-root{
     color:lightgrey;
 }
@@ -52,6 +56,10 @@
     }
 
     .Tabs-main-container .css-1wxkzlj-MuiTabs-flexContainer{
+        gap:0;
+    }
+
+    .Tabs-main-container .css-162tvoi{
         gap:0;
     }
 }
