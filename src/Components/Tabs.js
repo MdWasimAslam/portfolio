@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import "./Tabs.css";
 import About from './Tabs/About';
+import Career from './Tabs/Career';
 
 
 
@@ -54,7 +55,7 @@ export default function ColorTabs() {
         )}
         {value === 'four' && (
           <Typography variant="body1">
-            <b>Career:</b> This is the career section. Highlight career opportunities or personal milestones.
+           <Career/>
           </Typography>
         )}
       </Box>

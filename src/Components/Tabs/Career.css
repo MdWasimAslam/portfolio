@@ -1,0 +1,159 @@
+.career-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .career-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+    border-left: 3px solid grey; /* Line for the timeline */
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 40px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: -12px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #F05454; /* Dot color */
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+  
+
+  
+  .timeline-content {
+    /* background: #f9f9f9; */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-company-logo{
+    width: 300px;
+    height: 70px;
+    margin: 0 auto;
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 5px;
+    
+  }
+  .timeline-company {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+
+  }
+  
+  .timeline-role,
+  .timeline-duration,
+  .timeline-description {
+    margin: 2px 0;
+  }
+  
+  .timeline-role {
+    color: #dedede;
+  }
+  
+  .timeline-duration {
+    font-size: 0.9rem;
+    color: #dedede;
+  }
+  
+  .timeline-description {
+    color: #888;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .tech-stack ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+
+  }
+
+    .tech-stack li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #F05454;
+        color: white;
+        border-radius: 5px;
+    }
+  
+
+    /* mobile responsiveness */
+
+    @media (max-width: 768px) {
+      .timeline-dot {
+        left: -8px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+      }
+  
+      .timeline {
+        padding: 10px 0;
+      }
+  
+      .timeline-item {
+        padding-left: 30px;
+      }
+  
+      .timeline-content {
+        padding: 5px 10px;
+      }
+
+        .timeline-company-logo{
+            width: 200px;
+            height: 50px;
+        }
+  
+      .timeline-company {
+        font-size: 1rem;
+      }
+  
+      .timeline-role {
+        font-size: 0.9rem;
+      }
+  
+      .timeline-duration {
+        font-size: 0.8rem;
+      }
+  
+      .timeline-description {
+        font-size: 0.8rem;
+      }
+
+
+        .tech-stack li {
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding: 5px 5px;
+            font-size: 0.8rem;
+        }
+
+
+        
+
+    }
