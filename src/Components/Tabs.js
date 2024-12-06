@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import "./Tabs.css";
+import About from './Tabs/About';
 
 
 
@@ -43,7 +44,7 @@ export default function ColorTabs() {
         )}
         {value === 'two' && (
           <Typography variant="body1">
-            <b>About:</b> This is the about section. Here, you can describe yourself or your application.
+            <About/>
           </Typography>
         )}
         {value === 'three' && (
