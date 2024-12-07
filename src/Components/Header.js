@@ -23,15 +23,6 @@ const logoStyles = {
 //     color:"#333"
 // };
 
-const buttonStyles = {
-    backgroundColor: '#4CAF50',
-    color: 'white',
-    border: 'none',
-    padding: '10px 20px',
-    cursor: 'pointer',
-    borderRadius: '4px',
-    marginTop: '15px',
-};
 
 function Header() {
     const [showCard, setShowCard] = useState(false);
