@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import "./Tabs.css";
 import About from './Tabs/About';
 import Career from './Tabs/Career';
+import Projects from './Tabs/Projects';
+import Feed from './Tabs/Feed';
 
 
 
@@ -40,7 +42,7 @@ export default function ColorTabs() {
       <Box className='tabs-content'>
         {value === 'one' && (
           <Typography variant="body1">
-            <b>Feed:</b> This is the feed section. Here, you can display updates, news, or other posts.
+            <Feed/>
           </Typography>
         )}
         {value === 'two' && (
@@ -50,7 +52,7 @@ export default function ColorTabs() {
         )}
         {value === 'three' && (
           <Typography variant="body1">
-            <b>Projects:</b> This is the projects section. Showcase your work or portfolio here.
+            <Projects/>
           </Typography>
         )}
         {value === 'four' && (

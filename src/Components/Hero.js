@@ -42,7 +42,6 @@ const Hero = () => {
       <div className="user-details">
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <div className="fullName">Md Wasim Aslam</div>
-          {/* <img src={Verified} alt="Verified-Icon" className="verified-icon"/> */}
           <VerifiedIcon sx={{ color: "#F05454" }} />
         </div>
         <div className="intro-line intro-1">Developer, Thinker, Artist! ✨</div>
@@ -60,7 +59,7 @@ const Hero = () => {
         <div className="subIntro-items">
           <AttachFileIcon />
           <div style={{ color: "#F05454" }}>
-            <b>/links</b>
+            <b>Resume</b>
           </div>
         </div>
         <div className="subIntro-items">
